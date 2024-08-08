@@ -1,0 +1,35 @@
+﻿@model List<Product>
+
+<h2>Products</h2>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Title</th>
+			<th>Discription</th>
+			<th>Price</th>
+			<th>Category</th>
+			<th>Quantity</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var product in Model) {
+			<tr>
+				<td>@product.ProductId</td>
+				<td>@product.Title</td>
+				<td>@product.Description</td>
+				<td>@product.Price</td>
+				<td>@product.Category</td>
+				<td>@product.Quantity</td>
+				<td>
+					<a class="btn btn-primary" href="@Url.Action("Update", new { id = product.ProductId})">Edit</a>
+					<a class="btn btn-danger" href="@Url.Action("Delete", new { id = product.ProductId})">Delete</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
+
+<a class="btn btn-success" href="@Url.Action("Create")">Create</a>

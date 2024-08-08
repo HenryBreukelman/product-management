@@ -1,0 +1,9 @@
+﻿@model ProductViewModel
+
+@using (Html.BeginForm()) {
+	<div>
+		@Html.LabelFor(m => m.Quantity)
+		@Html.TextBoxFor(m => m.Quantity)
+	</div>
+	<button type="submit">Add Random Product</button>
+}

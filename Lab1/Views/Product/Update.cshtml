@@ -1,0 +1,16 @@
+﻿@model Lab1.Models.Product
+
+<h2>Update Product</h2>
+
+@using (Html.BeginForm()) {
+	<input type="hidden" asp-for="ProductId" />
+	<input type="hidden" asp-for="Title" />
+	<input type="hidden" asp-for="Description" />
+	<input type="hidden" asp-for="Price" />
+	<input type="hidden" asp-for="Category" />
+	<div>
+		@Html.LabelFor(m => m.Quantity)
+		@Html.TextBoxFor(m => m.Quantity)
+	</div>
+	<button type="submit">Update</button>
+}
